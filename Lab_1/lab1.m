@@ -1,4 +1,4 @@
-clear; close;
+clear; close all;
 %%%%%%%%%%%%%%%%%%%%%%%% Numerical Integration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % define the set of parameters specific to our ODE
@@ -268,7 +268,20 @@ n = 7;
 % PD Compensator TF
 C = -100*tf([K_p + K_d, K_p*n],[1, n]);
 
+
+%check root locus to ensure that locus does not have region on right hand
+%plane
+figure
+rlocus(C*sys)
+
+
+% check that there is no zero on the right hand plane
+zpk(1+C*sys)
+
+
+
 % Creating bode plot of Controller TF to check how good it is
+figure
 bode(C)
 
 % Finding Zeros and Poles of Controller TF
