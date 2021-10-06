@@ -12,5 +12,5 @@ x2 = x(2);
 u = 0;
 
 %compute xdot using nonlinear equation
-xdot = [x2; -g/l*sin(x1) - 1/(M*l)*cos(x1)*u]
+xdot = [x2; -g/l*sin(x1) - 1/(M*l)*cos(x1)*u];
 end

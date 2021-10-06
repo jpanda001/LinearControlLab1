@@ -140,8 +140,8 @@ Xdot = [xdot; zdot];
 
 %substitute numerical values to non-state-variables
 g_val = 9.81;
-m_val = 5;
-l_val = 2;
+m_val = 0.15;
+l_val = 0.2;
 u_val = 0;
 
 Xdot = subs(Xdot, g, g_val);
@@ -261,12 +261,12 @@ eig(A)
 %%%%%%%%%%%%% Pendulum Stabilization %%%%%%%%%%%%%%
 
 % Can be further optimized
-K_d = 12;
-K_p = 5;
+K_d = 7;
+K_p = 3;
 n = 7;
 
 % PD Compensator TF
-C = -100*tf([K_p + K_d, K_p*n],[1, n]);
+C = -0.5*tf([K_p + K_d, K_p*n],[1, n]);
 
 
 %check root locus to ensure that locus does not have region on right hand
@@ -277,8 +277,6 @@ rlocus(C*sys)
 
 % check that there is no zero on the right hand plane
 zpk(1+C*sys)
-
-
 
 % Creating bode plot of Controller TF to check how good it is
 figure
@@ -299,7 +297,7 @@ text(real(p)-0.1,imag(p)-0.1,'\bfPoles','color',[0.6 0 0])
 % Solving with ODE45
 parameters = struct('M', m_val, 'g', g_val, 'l', l_val, 'F', F, 'G', G, 'H', H, 'L', L);
 
-x0 = [0 1.99*sqrt(g_val/l_val) 0];
+x0 = [1.57 1.99*sqrt(g_val/l_val) 0];
 
 [t,x] = ode45(@controlled_pendulum, Tspan, x0, options, parameters);
 
@@ -317,9 +315,3 @@ subplot(212)
 plot(t, x2)
 xlabel("t")
 ylabel("x2")
-
-
-
-
-
-
