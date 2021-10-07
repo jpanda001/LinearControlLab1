@@ -259,49 +259,49 @@ zpk(sys)
 eig(A)
 
 %%%%%%%%%%%%% Pendulum Stabilization %%%%%%%%%%%%%%
-
+close all
 % Can be further optimized
-K_d = 7;
-K_p = 3;
-n = 7;
+K_d = 17;
+K_p = 1.9;
+K_i = 7;
+n = 55;
 
 % PD Compensator TF
-C = -0.5*tf([K_p + K_d, K_p*n],[1, n]);
-
+C = -1*tf([K_p+K_d, K_p*n],[1, n]);
+% C_2 = -0.5*tf([K_p + K_d, K_i + K_p*n, K_i*n],[1, n, 0]);
+% controlSystemDesigner(sys);
 
 %check root locus to ensure that locus does not have region on right hand
 %plane
-figure
-rlocus(C*sys)
-
 
 % check that there is no zero on the right hand plane
-zpk(1+C*sys)
+% zpk(1+C*sys)
 
 % Creating bode plot of Controller TF to check how good it is
-figure
-bode(C)
+% figure
+% bode(C)
 
 % Finding Zeros and Poles of Controller TF
-[num, den] = tfdata(1 + C*sys)
-[z, p, k] = tf2zpk(cell2mat(num),cell2mat(den))
+% [num, den] = tfdata(1 + C*sys)
+% [z, p, k] = tf2zpk(cell2mat(num),cell2mat(den))
 
 % Plotting zeros and poles of Controller TF
-fvtool(cell2mat(num),cell2mat(den),'polezero')
-text(real(z)-0.1,imag(z)-0.1,'\bfZeros','color',[0 0.4 0])
-text(real(p)-0.1,imag(p)-0.1,'\bfPoles','color',[0.6 0 0])
+% fvtool(cell2mat(num),cell2mat(den),'polezero')
+% text(real(z)-0.1,imag(z)-0.1,'\bfZeros','color',[0 0.4 0])
+% text(real(p)-0.1,imag(p)-0.1,'\bfPoles','color',[0.6 0 0])
 
 % Estimating to controller state-representation matrices 
-[F, G, H, L] = ssdata(C);
-
-% Solving with ODE45
+[F, G, H, L] = ssdata(C)
+% 
+% % Solving with ODE45
 parameters = struct('M', m_val, 'g', g_val, 'l', l_val, 'F', F, 'G', G, 'H', H, 'L', L);
-
-x0 = [1.57 1.99*sqrt(g_val/l_val) 0];
-
+% 
+x0 = [0 1.99*sqrt(g_val/l_val) 0];
+% 
+Tspan = linspace(0,10,1e3);
 [t,x] = ode45(@controlled_pendulum, Tspan, x0, options, parameters);
-
-% Plotting x1 and x2 against time
+% 
+% % Plotting x1 and x2 against time
 x1 = x(:,1);
 x2 = x(:,2);
 
