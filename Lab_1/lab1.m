@@ -140,8 +140,8 @@ Xdot = [xdot; zdot];
 
 %substitute numerical values to non-state-variables
 g_val = 9.81;
-m_val = 0.15;
-l_val = 0.2;
+m_val = 0.2;
+l_val = 0.15;
 u_val = 0;
 
 Xdot = subs(Xdot, g, g_val);
