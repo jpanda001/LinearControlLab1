@@ -180,9 +180,9 @@ plot(t, x(:,1))
 hold on
 plot(t, x(:,3))
 hold off
-legend('x1', 'z1')
-xlabel("t")
-ylabel("\theta")
+legend('x1 (non-linearized)', 'z1 (linearized)')
+xlabel("t (sec)")
+ylabel("\theta (rad)")
 
 % plot non-linearized theta_dot (x2) and linearized theta_dot (z2) against time
 subplot(212)
@@ -190,9 +190,9 @@ plot(t, x(:,2))
 hold on
 plot(t, x(:,4))
 hold off
-legend('x2', 'z2')
-xlabel("t")
-ylabel('$\dot{\theta}$', 'Interpreter','latex')
+legend('x2 (non-linearized)', 'z2 (linearized)')
+xlabel("t (sec)")
+ylabel('$\dot{\theta}$ (rad/sec)', 'Interpreter','latex')
 
 sgtitle('Plot of x and z against time for initial condition 1: [0; sqrt(g/l)]') 
 
@@ -202,10 +202,10 @@ plot(x(:,1),  x(:,2))
 hold on
 plot(x(:,3),  x(:,4))
 hold off
-xlabel("\theta")
-ylabel('$\dot{\theta}$', 'Interpreter','latex')
-legend('x2 vs x1', 'z2 vs z1')
-title("initial condition 1: [0; sqrt(g/l)]")
+xlabel("\theta (rad)")
+ylabel('$\dot{\theta}$ (rad/sec)', 'Interpreter','latex')
+legend('x2 vs x1 (non-linearized)', 'z2 vs z1 (linearized)')
+title("x2 vs x1 and z2 vs z1 orbit plot for initial condition 1: [0; sqrt(g/l)]")
 
 
 % initial condition 2
@@ -221,9 +221,9 @@ plot(t, x(:,1))
 hold on
 plot(t, x(:,3))
 hold off
-legend('x1', 'z1')
-xlabel("t")
-ylabel("\theta")
+legend('x1 (non-linearized)', 'z1 (linearized)')
+xlabel("t (sec)")
+ylabel("\theta (rad)")
 
 % plot non-linearized theta_dot (x2) and linearized theta_dot (z2) against time
 subplot(212)
@@ -231,11 +231,11 @@ plot(t, x(:,2))
 hold on
 plot(t, x(:,4))
 hold off
-legend('x2', 'z2')
-xlabel("t")
-ylabel('$\dot{\theta}$', 'Interpreter','latex')
+legend('x2 (non-linearized)', 'z2 (linearized)')
+xlabel("t (sec)")
+ylabel('$\dot{\theta}$ (rad/sec)', 'Interpreter','latex')
 
-sgtitle('initial condition 2: [0; 1.99*sqrt(g/l)]') 
+sgtitle('Plot of x and z against time for initial condition 2: [0; 1.99*sqrt(g/l)]') 
 
 %plot orbit x2 vs x1 and z2 vs z1
 figure
@@ -243,10 +243,10 @@ plot(x(:,1),  x(:,2))
 hold on
 plot(x(:,3),  x(:,4))
 hold off
-xlabel("\theta")
-ylabel('$\dot{\theta}$', 'Interpreter','latex')
-legend('x2 vs x1', 'z2 vs z1')
-title('initial condition 2: [0; 1.99*sqrt(g/l)]')
+xlabel("\theta (rad)")
+ylabel('$\dot{\theta}$ (rad/sec)', 'Interpreter','latex')
+legend('x2 vs x1 (non-linearized)', 'z2 vs z1 (linearized)')
+title('x2 vs x1 and z2 vs z1 orbit plot for initial condition 2: [0; 1.99*sqrt(g/l)]')
 
 %% LTI Representation 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
