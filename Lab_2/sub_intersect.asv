@@ -1,0 +1,6 @@
+function C = sub_intersect(A, B)
+    % Find the nullspace of [A, -B]
+    nullspace_basis = null([A, -B]);
+    % Extract the part of the
+    
+end

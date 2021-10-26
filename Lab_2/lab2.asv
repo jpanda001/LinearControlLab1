@@ -22,10 +22,5 @@ w_basis_dot = dot(w_basis(:, 1), w_basis(:, 2))
 
 % =============================== Output 2 ===============================
 
-% Matrix spanning subspace sum of subspaces V and W
-sub_sum_v_w = sub_sum(v_basis, w_basis)
-
-% Matrix spanning intersection of subspaces V and W
-sub_intersect_v_w = sub_intersect(v_basis, w_basis)
-
-% =============================== Output 3 ===============================
+% Basis of subspace sum of subspaces V and W
+sub_sum_v_w = 
