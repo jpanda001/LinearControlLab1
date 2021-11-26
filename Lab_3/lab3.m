@@ -468,7 +468,7 @@ sgtitle('performance of linear vs nonlinear simulations')
 
 
  %%%%%%%%%%%%%%%%%%Varying initial y value
-y0_val = -13;            % initial y position
+y0_val = -1;            % initial y position
 q1_val = 0.05;
 q2_val = 5;
 R = [0.005];
