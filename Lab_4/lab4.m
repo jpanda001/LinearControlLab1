@@ -113,33 +113,33 @@ thetadot_error_L2 = x_gen_L2(:,8) - x_gen_L2(:,4);
 % plotting a figure with 4 subplots for linear system
 figure
 subplot(2,2,1)              % plotting z
-plot(t_L1, z_error_L1(:,1))
+plot(t_L1, z_error_L1)
 hold on                     
-plot(t_L2, z_error_L2(:,1))
+plot(t_L2, z_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("z (m)")
 
 subplot(2,2,2)              % plotting z_dot
-plot(t_L1, zdot_error_L1(:,1))
+plot(t_L1, zdot_error_L1)
 hold on                     
-plot(t_L2, zdot_error_L2(:,1))
+plot(t_L2, zdot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
-plot(t_L1, theta_error_L1(:,1))
+plot(t_L1, theta_error_L1)
 hold on                     
-plot(t_L2, theta_error_L2(:,1))
+plot(t_L2, theta_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
 
 subplot(2,2,4)              % plotting theta_dot
-plot(t_L1, thetadot_error_L1(:,1))
+plot(t_L1, thetadot_error_L1)
 hold on                     
-plot(t_L2, thetadot_error_L2(:,1))
+plot(t_L2, thetadot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
@@ -176,33 +176,33 @@ thetadot_error_L2 = x_gen_L2(:,8) - x_gen_L2(:,4);
 % plotting a figure with 4 subplots for nonlinear system
 figure
 subplot(2,2,1)              % plotting z
-plot(t_L1, z_error_L1(:,1))
+plot(t_L1, z_error_L1)
 hold on                     
-plot(t_L2, z_error_L2(:,1))
+plot(t_L2, z_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("z (m)")
 
 subplot(2,2,2)              % plotting z_dot
-plot(t_L1, zdot_error_L1(:,1))
+plot(t_L1, zdot_error_L1)
 hold on                     
-plot(t_L2, zdot_error_L2(:,1))
+plot(t_L2, zdot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
-plot(t_L1, theta_error_L1(:,1))
+plot(t_L1, theta_error_L1)
 hold on                     
-plot(t_L2, theta_error_L2(:,1))
+plot(t_L2, theta_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
 
 subplot(2,2,4)              % plotting theta_dot
-plot(t_L1, thetadot_error_L1(:,1))
+plot(t_L1, thetadot_error_L1)
 hold on                     
-plot(t_L2, thetadot_error_L2(:,1))
+plot(t_L2, thetadot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
@@ -256,33 +256,33 @@ thetadot_error_L2 = x_gen_L2(:,8) - x_gen_L2(:,4);
 % plotting a figure with 4 subplots for nonlinear system
 figure
 subplot(2,2,1)              % plotting z
-plot(t_L1, z_error_L1(:,1))
+plot(t_L1, z_error_L1)
 hold on                     
-plot(t_L2, z_error_L2(:,1))
+plot(t_L2, z_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("z (m)")
 
 subplot(2,2,2)              % plotting z_dot
-plot(t_L1, zdot_error_L1(:,1))
+plot(t_L1, zdot_error_L1)
 hold on                     
-plot(t_L2, zdot_error_L2(:,1))
+plot(t_L2, zdot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
-plot(t_L1, theta_error_L1(:,1))
+plot(t_L1, theta_error_L1)
 hold on                     
-plot(t_L2, theta_error_L2(:,1))
+plot(t_L2, theta_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
 
 subplot(2,2,4)              % plotting theta_dot
-plot(t_L1, thetadot_error_L1(:,1))
+plot(t_L1, thetadot_error_L1)
 hold on                     
-plot(t_L2, thetadot_error_L2(:,1))
+plot(t_L2, thetadot_error_L2)
 legend('observer L1', 'observer L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
@@ -310,4 +310,135 @@ thetadot_L1_MSE = sum(thetadot_L1_errors.^2)/length(thetadot_L1_errors)
 thetadot_L2_errors = thetadot_error_L2(t_L2 > t_L2(end) - 5);
 thetadot_L2_MSE = sum(thetadot_L2_errors.^2)/length(thetadot_L2_errors)
 
+% Discussion:
+% the observation for L1 fluctuates with a smaller magnitude compared to
+% the fluction of L2. However, system L2 still decays at a faster rate (as
+% seen at the beginning of the simulation period)
+
+% the MSE of L2 is larger than the MSE of L1 for all state components
+% because large negative time constants (as achieved through pole
+% placements cause the system to react faster to changes in the input
+%(observation). Hence, more noise is picked up
+
+% in terms of frequency response,assuming zero input, the transfer function
+% becomes (note: Y is input, X is the state -output) is X/Y =  L/(A+LC -s).
+% when L2 is designed such that the poles of A+LC is more negative, the
+% amplitude of high prequency noise (large s) is amplified more
+% drastically. Because noise is random, and high frequency, it has more
+% impact in the system with observation matrix = L2
+
+% reuse lienarized_params from output 1
+% preparing for simulations
+x0 = [-0.5; 0; -pi/4; 0];
+xhat0 = [0; 0; 0; 0];
+x0_gen = [x0; xhat0];    % concatenate initial conditions to simulate simultaneously
+
+% define parameters for L1 and simulate for linear system
+linearized_params.L = L_1;
+[t_L1, x_gen_output_L1]=ode45(@estimate_control_dynamics_linear,Tspan,x0_gen,options, linearized_params);
+
+% define parameters for L2 and simulate for linear system
+linearized_params.L = L_2;
+[t_L2, x_gen_output_L2]=ode45(@estimate_control_dynamics_linear,Tspan,x0_gen,options, linearized_params);
+
+% obtain state feedback states
+[t_L1, x_gen_state_L1]=ode45(@state_estimate_dynamics_linear,Tspan,x0_gen,options, linearized_params);
+state_feedback_state = x_gen_state_L1(:,1:4); % this is the same for both observer matrices
+
+% plotting a figure with 4 subplots for linear system
+figure
+subplot(2,2,1)              % plotting z
+plot(t_L1, state_feedback_state(:,1))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,1))
+plot(t_L2, x_gen_output_L2(:,1))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("z (m)")
+
+subplot(2,2,2)              % plotting z_dot
+plot(t_L1, state_feedback_state(:,2))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,2))
+plot(t_L2, x_gen_output_L2(:,2))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
+
+subplot(2,2,3)              % plotting theta
+plot(t_L1, state_feedback_state(:,3))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,3))
+plot(t_L2, x_gen_output_L2(:,3))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('observer L1', 'observer L2')
+xlabel("t (sec)")
+ylabel("\theta (rad)")
+
+subplot(2,2,4)              % plotting theta_dot
+plot(t_L1, state_feedback_state(:,4))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,4))
+plot(t_L2, x_gen_output_L2(:,4))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
+
+sgtitle('output feedback state estimation of observer L1 vs observer L2 for linear system')
+
+% nonlinear output feedback control (reuse nonlinear_params from output1)
+
+% define parameters for L1 and simulate for nonlinear system
+nonlinear_params.L = L_1;
+[t_L1, x_gen_L1]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+
+% define parameters for L2 and simulate for nonlinear system
+nonlinear_params.L = L_2;
+[t_L2, x_gen_L2]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+
+% obtain state feedback states
+[t_L1, x_gen_state_L1]=ode45(@state_estimate_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+state_feedback_state = x_gen_state_L1(:,1:4); % this is the same for both observer matrices
+
+
+% plotting a figure with 4 subplots for nonlinear system
+figure
+subplot(2,2,1)              % plotting z
+plot(t_L1, state_feedback_state(:,1))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,1))
+plot(t_L2, x_gen_output_L2(:,1))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("z (m)")
+
+subplot(2,2,2)              % plotting z_dot
+plot(t_L1, state_feedback_state(:,2))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,2))
+plot(t_L2, x_gen_output_L2(:,2))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
+
+subplot(2,2,3)              % plotting theta
+plot(t_L1, state_feedback_state(:,3))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,3))
+plot(t_L2, x_gen_output_L2(:,3))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('observer L1', 'observer L2')
+xlabel("t (sec)")
+ylabel("\theta (rad)")
+
+subplot(2,2,4)              % plotting theta_dot
+plot(t_L1, state_feedback_state(:,4))
+hold on                     
+plot(t_L2, x_gen_output_L1(:,4))
+plot(t_L2, x_gen_output_L2(:,4))
+legend('state feedback', 'output feedback L1', 'output feedback L2')
+xlabel("t (sec)")
+ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
+
+sgtitle('output feedback state estimation of observer L1 vs observer L2 for nonlinear system')
 
