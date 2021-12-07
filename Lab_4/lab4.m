@@ -116,35 +116,39 @@ subplot(2,2,1)              % plotting z
 plot(t_L1, z_error_L1)
 hold on                     
 plot(t_L2, z_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("z (m)")
+ylabel("y (m)")
+title('Error for state variable $y$', 'Interpreter','latex')
 
 subplot(2,2,2)              % plotting z_dot
 plot(t_L1, zdot_error_L1)
 hold on                     
 plot(t_L2, zdot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Error for state variable $\dot{y}$', 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
 plot(t_L1, theta_error_L1)
 hold on                     
 plot(t_L2, theta_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
+title('Error for state variable $\theta$', 'Interpreter','latex')
 
 subplot(2,2,4)              % plotting theta_dot
 plot(t_L1, thetadot_error_L1)
 hold on                     
 plot(t_L2, thetadot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
-
-sgtitle('performance of observer L1 vs observer L2 for linear system')
+title('Error for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('State Estimation Error for Noiseless Linear model of Cart-Pendulum System with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
 
 
 
@@ -179,35 +183,36 @@ subplot(2,2,1)              % plotting z
 plot(t_L1, z_error_L1)
 hold on                     
 plot(t_L2, z_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("z (m)")
-
+ylabel("y (m)")
+title('Error for state variable $y$', 'Interpreter','latex')
 subplot(2,2,2)              % plotting z_dot
 plot(t_L1, zdot_error_L1)
 hold on                     
 plot(t_L2, zdot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
-
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Error for state variable $\dot{y}$', 'Interpreter','latex')
 subplot(2,2,3)              % plotting theta
 plot(t_L1, theta_error_L1)
 hold on                     
 plot(t_L2, theta_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
-
+title('Error for state variable $\theta$', 'Interpreter','latex')
 subplot(2,2,4)              % plotting theta_dot
 plot(t_L1, thetadot_error_L1)
 hold on                     
 plot(t_L2, thetadot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
-
-sgtitle('performance of observer L1 vs observer L2 for nonlinear system')
+title('Error for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('State Estimation Error for Noiseless Non-Linear model of Cart-Pendulum System with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
 
 % observation: 
 % the observation error of the linear system is generally smaller and
@@ -218,6 +223,7 @@ sgtitle('performance of observer L1 vs observer L2 for nonlinear system')
 % significantly worse (larger) than L1's
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% output 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cov_mat = [0.005 0;
             0 0.001];
 L_upper = chol(cov_mat);
@@ -259,35 +265,39 @@ subplot(2,2,1)              % plotting z
 plot(t_L1, z_error_L1)
 hold on                     
 plot(t_L2, z_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("z (m)")
+ylabel("y (m)")
+title('Error for state variable $y$', 'Interpreter','latex')
 
 subplot(2,2,2)              % plotting z_dot
 plot(t_L1, zdot_error_L1)
 hold on                     
 plot(t_L2, zdot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
-ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Error for state variable $\dot{y}$', 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
 plot(t_L1, theta_error_L1)
 hold on                     
 plot(t_L2, theta_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
+title('Error for state variable $\theta$', 'Interpreter','latex')
 
 subplot(2,2,4)              % plotting theta_dot
 plot(t_L1, thetadot_error_L1)
 hold on                     
 plot(t_L2, thetadot_error_L2)
-legend('observer L1', 'observer L2')
+legend('Observer Gain L1', 'Observer Gain L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
-
-sgtitle('performance of observer L1 vs observer L2 for noisy linear system')
+title('Error for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('State Estimation Error for Noisy Linear model of Cart-Pendulum System with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
 
 % obtain the MSE of the final 5sec of each component of each simulation
 z_L1_errors = z_error_L1(t_L1 > t_L1(end) - 5);
@@ -327,6 +337,7 @@ thetadot_L2_MSE = sum(thetadot_L2_errors.^2)/length(thetadot_L2_errors)
 % drastically. Because noise is random, and high frequency, it has more
 % impact in the system with observation matrix = L2
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% output 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % reuse lienarized_params from output 1
 % preparing for simulations
 x0 = [-0.5; 0; -pi/4; 0];
@@ -342,8 +353,8 @@ linearized_params.L = L_2;
 [t_L2, x_gen_output_L2]=ode45(@estimate_control_dynamics_linear,Tspan,x0_gen,options, linearized_params);
 
 % obtain state feedback states
-[t_L1, x_gen_state_L1]=ode45(@state_estimate_dynamics_linear,Tspan,x0_gen,options, linearized_params);
-state_feedback_state = x_gen_state_L1(:,1:4); % this is the same for both observer matrices
+[t_L1, x_gen_state]=ode45(@state_estimate_dynamics_linear,Tspan,x0_gen,options, linearized_params);
+state_feedback_state = x_gen_state(:,1:4); % this is the same for both observer matrices
 
 % plotting a figure with 4 subplots for linear system
 figure
@@ -352,53 +363,55 @@ plot(t_L1, state_feedback_state(:,1))
 hold on                     
 plot(t_L2, x_gen_output_L1(:,1))
 plot(t_L2, x_gen_output_L2(:,1))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
-ylabel("z (m)")
+ylabel("y (m)")
+title('Signal Response for state variable $y$', 'Interpreter','latex')
 
 subplot(2,2,2)              % plotting z_dot
 plot(t_L1, state_feedback_state(:,2))
 hold on                     
 plot(t_L2, x_gen_output_L1(:,2))
 plot(t_L2, x_gen_output_L2(:,2))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
-ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Signal Response for state variable $\dot{y}$', 'Interpreter','latex')
 
 subplot(2,2,3)              % plotting theta
 plot(t_L1, state_feedback_state(:,3))
 hold on                     
 plot(t_L2, x_gen_output_L1(:,3))
 plot(t_L2, x_gen_output_L2(:,3))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
-legend('observer L1', 'observer L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
+title('Signal Response for state variable $\theta$', 'Interpreter','latex')
 
 subplot(2,2,4)              % plotting theta_dot
 plot(t_L1, state_feedback_state(:,4))
 hold on                     
 plot(t_L2, x_gen_output_L1(:,4))
 plot(t_L2, x_gen_output_L2(:,4))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
-
-sgtitle('output feedback state estimation of observer L1 vs observer L2 for linear system')
-
+title('Signal Response for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('Plant State Signal Responses for Noiseless Linear model with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
 % nonlinear output feedback control (reuse nonlinear_params from output1)
 
 % define parameters for L1 and simulate for nonlinear system
 nonlinear_params.L = L_1;
-[t_L1, x_gen_L1]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+[t_L1, x_gen_output_L1]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
 
 % define parameters for L2 and simulate for nonlinear system
 nonlinear_params.L = L_2;
-[t_L2, x_gen_L2]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+[t_L2, x_gen_output_L2]=ode45(@estimate_control_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
 
 % obtain state feedback states
-[t_L1, x_gen_state_L1]=ode45(@state_estimate_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
-state_feedback_state = x_gen_state_L1(:,1:4); % this is the same for both observer matrices
+[t_L1, x_gen_state]=ode45(@state_estimate_dynamics_nl,Tspan,x0_gen,options, nonlinear_params);
+state_feedback_state = x_gen_state(:,1:4); % this is the same for both observer matrices
 
 
 % plotting a figure with 4 subplots for nonlinear system
@@ -406,39 +419,215 @@ figure
 subplot(2,2,1)              % plotting z
 plot(t_L1, state_feedback_state(:,1))
 hold on                     
-plot(t_L2, x_gen_output_L1(:,1))
+plot(t_L1, x_gen_output_L1(:,1))
 plot(t_L2, x_gen_output_L2(:,1))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
-ylabel("z (m)")
-
+ylabel("y (m)")
+title('Signal Response for state variable $y$', 'Interpreter','latex')
 subplot(2,2,2)              % plotting z_dot
 plot(t_L1, state_feedback_state(:,2))
 hold on                     
-plot(t_L2, x_gen_output_L1(:,2))
+plot(t_L1, x_gen_output_L1(:,2))
 plot(t_L2, x_gen_output_L2(:,2))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
-ylabel("$\dot{z}$ (m/s)", 'Interpreter','latex')
-
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Signal Response for state variable $\dot{y}$', 'Interpreter','latex')
 subplot(2,2,3)              % plotting theta
 plot(t_L1, state_feedback_state(:,3))
 hold on                     
-plot(t_L2, x_gen_output_L1(:,3))
+plot(t_L1, x_gen_output_L1(:,3))
 plot(t_L2, x_gen_output_L2(:,3))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
-legend('observer L1', 'observer L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
 ylabel("\theta (rad)")
-
+title('Signal Response for state variable $\theta$', 'Interpreter','latex')
 subplot(2,2,4)              % plotting theta_dot
 plot(t_L1, state_feedback_state(:,4))
 hold on                     
-plot(t_L2, x_gen_output_L1(:,4))
+plot(t_L1, x_gen_output_L1(:,4))
 plot(t_L2, x_gen_output_L2(:,4))
-legend('state feedback', 'output feedback L1', 'output feedback L2')
+legend('State Feedback', 'Output Feedback with L1', 'Output Feedback with L2')
 xlabel("t (sec)")
 ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
+title('Signal Response for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('Plant State Signal Responses for Noiseless Non-Linear model with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
 
-sgtitle('output feedback state estimation of observer L1 vs observer L2 for nonlinear system')
 
+% Discussion
+
+% linear plant
+%   output feedback vs state feedback:
+% all 3 systems generally have similar settling time. The amount of
+% overshoot of output feedback with observer gain L2 is generally smaller
+% than that of the state feedback system whilst output feedback with 
+% observer gain L1 has the lartest overshoot of all.
+
+% (not required) I speculate that this is because the optimal control in
+% the nonlinear system is more gradual compared to the behavior of the
+% state-feedback controller. Because the state estimation lags behind the
+% actual state signal, the controller response of the output feedback system is
+% more gradual, and optimal.
+
+
+% when the observer convergence is larger (L2), the plant state signal 
+% resembles the state feedback state signals much more closely in comparison 
+% to the state signal of the observer with slower convergence (L1). In this
+% case, we define closeness metric by a combination of the resemblance of
+% the overhall shape of the state signal's trajectories, and the gap between
+% the state signals trajectories. This behavior is as expected.
+
+% nonlinear plant
+% with larger observer convergence speed (as when we use L2), the state
+% signal tracks the state signal of the state-feedback nonlinear system
+% much closely than when the observer convergence speed is lower. In fact,
+% as convergence speed lowers (L1), the controlled state signal starts to
+% oscillate dramatically. This suggests by not being able to estimate the
+% state well, the controller won't be able to control the system optimally.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% output 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+nl_noisy_params = nonlinear_params;
+nl_noisy_params.W = W;
+
+
+% define parameters for L1 and simulate for nonlinear system
+nl_noisy_params.L = L_1;
+[t_L1, x_gen_output_L1]=ode45(@estimate_control_dynamics_nl_noisy,Tspan,x0_gen,options, nl_noisy_params);
+
+% define parameters for L2 and simulate for nonlinear noisy system
+nl_noisy_params.L = L_2;
+[t_L2, x_gen_output_L2]=ode45(@estimate_control_dynamics_nl_noisy,Tspan,x0_gen,options, nl_noisy_params);
+
+% plotting a figure with 4 subplots for nonlinear system
+figure
+subplot(2,2,1)              % plotting z
+plot(t_L2, x_gen_output_L1(:,1))
+hold on                     
+plot(t_L2, x_gen_output_L2(:,1))
+legend('Output Feedback with L1', 'Output Feedback with L2')
+xlabel("t (sec)")
+ylabel("y (m)")
+title('Signal Response for state variable $y$', 'Interpreter','latex')
+subplot(2,2,2)              % plotting z_dot
+plot(t_L2, x_gen_output_L1(:,2))
+hold on                     
+plot(t_L2, x_gen_output_L2(:,2))
+legend('Output Feedback with L1', 'Output Feedback with L2')
+xlabel("t (sec)")
+ylabel("$\dot{y}$ (m/s)", 'Interpreter','latex')
+title('Signal Response for state variable $\dot{y}$', 'Interpreter','latex')
+subplot(2,2,3)              % plotting theta
+plot(t_L2, x_gen_output_L1(:,3))
+hold on                     
+plot(t_L2, x_gen_output_L2(:,3))
+legend('Output Feedback with L1', 'Output Feedback with L2')
+xlabel("t (sec)")
+ylabel("\theta (rad)")
+title('Signal Response for state variable $\theta$', 'Interpreter','latex')
+subplot(2,2,4)              % plotting theta_dot
+plot(t_L2, x_gen_output_L1(:,4))
+hold on                     
+plot(t_L2, x_gen_output_L2(:,4))
+legend('Output Feedback with L1', 'Output Feedback with L2')
+xlabel("t (sec)")
+ylabel("$\dot{\theta}$ (rad/s)", 'Interpreter','latex')
+title('Signal Response for state variable $\dot{\theta}$', 'Interpreter','latex')
+set(gcf,'units','points','position',[0,0,800,500])
+sgtitle('Plant State Signal Responses for Noisy Linear model with Observer Gains $L_1$ and $L_2$', 'Interpreter','latex')
+
+
+% (extra, for discussion) 
+% regulation MSE calculation wrt equilirbium point at (0,0,0,0)
+z_error_L1 = 0 - x_gen_output_L1(:,1);
+zdot_error_L1 = 0 - x_gen_output_L1(:,2);
+theta_error_L1 = 0 - x_gen_output_L1(:,3);
+thetadot_error_L1 = 0 - x_gen_output_L1(:,4);
+
+z_error_L2 = 0 - x_gen_output_L2(:,1);
+zdot_error_L2 = 0 - x_gen_output_L2(:,2);
+theta_error_L2 = 0 - x_gen_output_L2(:,3);
+thetadot_error_L2 = 0 - x_gen_output_L2(:,4);
+
+z_L1_errors = z_error_L1(t_L1 > t_L1(end) - 5);
+regulation_z_L1_MSE = sum(z_L1_errors.^2)/length(z_L1_errors)
+z_L2_errors = z_error_L2(t_L2 > t_L2(end) - 5);
+regulation_z_L2_MSE = sum(z_L2_errors.^2)/length(z_L2_errors)
+
+zdot_L1_errors = zdot_error_L1(t_L1 > t_L1(end) - 5);
+regulation_zdot_L1_MSE = sum(zdot_L1_errors.^2)/length(zdot_L1_errors)
+zdot_L2_errors = zdot_error_L2(t_L2 > t_L2(end) - 5);
+regulation_zdot_L2_MSE = sum(zdot_L2_errors.^2)/length(zdot_L2_errors)
+
+theta_L1_errors = theta_error_L1(t_L1 > t_L1(end) - 5);
+regulation_theta_L1_MSE = sum(theta_L1_errors.^2)/length(theta_L1_errors)
+theta_L2_errors = theta_error_L2(t_L2 > t_L2(end) - 5);
+regulation_theta_L2_MSE = sum(theta_L2_errors.^2)/length(theta_L2_errors)
+
+thetadot_L1_errors = thetadot_error_L1(t_L1 > t_L1(end) - 5);
+regulation_thetadot_L1_MSE = sum(thetadot_L1_errors.^2)/length(thetadot_L1_errors)
+thetadot_L2_errors = thetadot_error_L2(t_L2 > t_L2(end) - 5);
+regulation_thetadot_L2_MSE = sum(thetadot_L2_errors.^2)/length(thetadot_L2_errors)
+
+
+% state estimation MSE
+z_error_L1 = x_gen_output_L1(:,5) - x_gen_output_L1(:,1);
+zdot_error_L1 = x_gen_output_L1(:,6) - x_gen_output_L1(:,2);
+theta_error_L1 = x_gen_output_L1(:,7) - x_gen_output_L1(:,3);
+thetadot_error_L1 = x_gen_output_L1(:,8) - x_gen_output_L1(:,4);
+
+z_error_L2 = x_gen_output_L2(:,5) - x_gen_output_L2(:,1);
+estimation_zdot_error_L2 = x_gen_output_L2(:,6) - x_gen_output_L2(:,2);
+theta_error_L2 = x_gen_output_L2(:,7) - x_gen_output_L2(:,3);
+estimation_thetadot_error_L2 = x_gen_output_L2(:,8) - x_gen_output_L2(:,4);
+
+z_L1_errors = z_error_L1(t_L1 > t_L1(end) - 5);
+estimation_z_L1_MSE = sum(z_L1_errors.^2)/length(z_L1_errors)
+z_L2_errors = z_error_L2(t_L2 > t_L2(end) - 5);
+estimation_z_L2_MSE = sum(z_L2_errors.^2)/length(z_L2_errors)
+
+zdot_L1_errors = zdot_error_L1(t_L1 > t_L1(end) - 5);
+estimation_zdot_L1_MSE = sum(zdot_L1_errors.^2)/length(zdot_L1_errors)
+zdot_L2_errors = zdot_error_L2(t_L2 > t_L2(end) - 5);
+estimation_zdot_L2_MSE = sum(zdot_L2_errors.^2)/length(zdot_L2_errors)
+
+theta_L1_errors = theta_error_L1(t_L1 > t_L1(end) - 5);
+estimation_theta_L1_MSE = sum(theta_L1_errors.^2)/length(theta_L1_errors)
+theta_L2_errors = theta_error_L2(t_L2 > t_L2(end) - 5);
+estimation_theta_L2_MSE = sum(theta_L2_errors.^2)/length(theta_L2_errors)
+
+thetadot_L1_errors = thetadot_error_L1(t_L1 > t_L1(end) - 5);
+estimation_thetadot_L1_MSE = sum(thetadot_L1_errors.^2)/length(thetadot_L1_errors)
+thetadot_L2_errors = thetadot_error_L2(t_L2 > t_L2(end) - 5);
+estimation_thetadot_L2_MSE = sum(thetadot_L2_errors.^2)/length(thetadot_L2_errors)
+
+
+
+% Discussion:
+% effect of noise: noise causes a lot of disruptive movement along the
+% trajectories of the state signals. This makes sense because measurement
+% noise means that the input signal is corrupted
+
+% with larger convergence speed, observer L2 converges (to within the
+% vicinity of the equilibrium point) much quicker, but also fluctuate
+% around this equilibrium point with larger magnitude (as seen in the case
+% of z\dot and theta\dot. 
+
+% To consolidate this point, we conducted the RMSE analysis on each state
+% signal, demonstrating the large sensitivity to input noise of controller
+% with large observer gain (L2). This is because large gains, as achieved 
+% through pole placements, cause the system to react faster to changes in
+% the input (observation). Hence, more noise is picked up. moew detailed
+% discussion is found in section 3.2
+
+%interesting POINT!!!
+% However, the difference in regulation MSE between L1 and L2 system wasn't as
+% dramatic as the estimation MSE (which we also calculated above) because small
+% convergence speed also has its flaws: not being able to track the state signal 
+% well means that the control signal is lagged, and suboptimal. This reduces 
+% the difference in regulation EMS error between observer L1 and L2. 
